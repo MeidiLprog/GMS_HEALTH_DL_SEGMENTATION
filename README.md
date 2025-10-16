@@ -8,6 +8,8 @@ This is the official repository of Generative Medical Segmentation (GMS).
 - **2024.12.09**: Our work was accepted by AAAI 2025.
 - **2024.05.13**: Code and model weights have been released.
 
+## VAE Comparisons
+We use the Stable Diffusion 2.0 VAE as the image tokenizer, and directly use the VAE model without any training or finetuning. We also provide a script for the VAE model comparisons, please check the [vae_comparison.py](vae_comparison.py)
 ## Introduction
 We introduce Generative Medical Segmentation (GMS), a novel approach leveraging a generative model for image segmentation. Concretely, GMS employs a robust pre-trained Variational Autoencoder (VAE) to derive latent representations of both images and masks, followed by a mapping model that learns the transition from image to mask in the latent space. This process culminates in generating a precise segmentation mask within the image space using the pre-trained VAE decoder. The design of GMS leads to fewer learnable parameters in the model, resulting in a reduced computational burden and enhanced generalization capability. Our extensive experimental analysis across five public datasets in different medical imaging domains demonstrates GMS outperforms existing discriminative segmentation models and has remarkable domain generalization.
 
@@ -110,11 +112,14 @@ To change hyper-parameters (batchsize, learning rate, training epochs, etc.), pl
 ## Citation
 If you use this code for your research, please consider citing our paper.
 ```
-@article{huo2024generative,
-  title={Generative Medical Segmentation},
+@inproceedings{huo2025generative,
+  title={Generative medical segmentation},
   author={Huo, Jiayu and Ouyang, Xi and Ourselin, S{\'e}bastien and Sparks, Rachel},
-  journal={arXiv preprint arXiv:2403.18198},
-  year={2024}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={4},
+  pages={3851--3859},
+  year={2025}
 }
 ```
 
